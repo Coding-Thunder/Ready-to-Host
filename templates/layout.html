@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/styles.css') }}">
+    <title>Project Under Development</title>
+</head>
+
+<body>
+    <!-- Using BEM(Block__Elenent--Modifier) Naming Conventions To Improve Scalability -->
+    <!-- Navigation Section -->
+    <section class="section-navigation-bar">
+        <nav class="navbar">
+            <div class="logo-img"><img src="{{ url_for('static',filename='img/home-logo.png') }}" alt=""></div>
+            <div class="logo">
+                <div class="navbar-logo--main">SYSTEMS ENGINEERING</div>
+                <div class="navbar-logo--sub">TOWARDS A RESPONSIBLE <span class="navbar-logo--sub--red">FUTURE</span>
+                </div>
+            </div>
+            <ul class="menu">
+                <li><a href="/">HOME</a></li>
+                <li><a href="/about-us">ABOUT US</a></li>
+                <li><a href="/patent-publications">PATENT PUBLICATIONS</a></li>
+                <div class="product__dropdown">
+                    <li><a href="/product">PRODUCTS</a></li>
+                    <div class="product__dropdown--content">
+                        <div class="items-1">
+                            <a href="/product/visualization-based-product">Visualization<br>based systems </a>
+                            <div class="item-list">
+                                <a href="#">HS Surveillance systems</a>
+                                <a href="#">VHS Metro station surveillance</a>
+                                <a href="#">Computer vision microscopy cameras</a>
+                                <a href="#">CV Microscopes</a>
+                                <a href="#">OIV camera</a>
+                                <a href="#">PIV cameras</a>
+                            </div>
+                        </div>
+                        <div class="items-2">
+                            <a href="/product/laser-systems">Laser systems</a>
+                            <div class="item-list2">
+                                <a href="#">Interferometric</a>
+                                <a href="#">Single beam<br>systems</a>
+                                <a href="#">Aberration<br>based systems</a>
+                            </div>
+                        </div>
+                        <div class="items-3">
+                            <a href="#">Holography based systems</a>
+                            <div class="item-list3">
+                                <a href="#">List being updated</a>
+                            </div>
+                        </div>
+                        <div class="items-4">
+                            <a href="#">Laser</a>
+                            <div class="item-list4">
+                                <a href="#">LD drivers</a>
+                                <a href="#">high frequency stroboscopes</a>
+                                <a href="#">strobe drivers</a>
+                                <a href="#">LED drivers</a>
+                                <a href="#">LEDs</a>
+                            </div>
+                        </div>
+                        <div class="items-5">
+                            <a href="#">Filters</a>
+                            <div class="item-list5">
+                                <a href="#">Biomedical filters</a>
+                                <a href="#">Band pass filters</a>
+                                <a href="#">Band block filters</a>
+                                <a href="#">IR filters</a>
+                                <a href="#">UV filters</a>
+                                <a href="#">Fluorescence filters</a>
+                            </div>
+                        </div>
+                        <div class="items-6">
+                            <a href="#">Optics</a>
+                            <div class="item-list6">
+                                <a href="#">Polarizer based windows</a>
+                                <a href="#">Beam shaping optics</a>
+                                <a href="#">Diffusion optics </a>
+                            </div>
+                        </div>
+                        <div class="items-7">
+                            <a href="#">Mechanical based<br>systems</a>
+                            <div class="item-list7">
+                                <a href="#">Goniometers</a>
+                                <a href="#">precision traverses</a>
+                                <a href="#">mounts</a>
+                            </div>
+                        </div>
+
+                        <div class="items-8">
+                            <a href="/product/software-and-driver">Softwares</a>
+                            <div class="item-list8">
+                                <a href="#">Beam scanner software</a>
+                                <a href="#">LD/PD software</a>
+                                <a href="#">PIV/OIV software</a>
+                                <a href="#">Surveillance software</a>
+                                <a href="#">CVMV software</a>
+                            </div>
+                        </div>
+                        <div class="items-9">
+                            <a href="/product/android-based-systems">Android</a>
+                            <div class="item-list9">
+                                <a href="#">App for dynamic imaging</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <li><a href="/career">CAREERS</a></li>
+                <li><a href="/contact-us">CONTACT US</a></li>
+                <li><a href="/for-investors">FOR INVESTORS</a></li>
+                <li><a href="/blog">BLOG</a></li>
+                <li id="hamburgermenu" class="hamburgermenu"><a onclick="showNavigation()"
+                        href="javascript:void(0)">&#9776;</a></li>
+            </ul>
+        </nav>
+        <div id="responsive-nav" class="responsive-nav">
+            <ul>
+                <li><a class="active" href="/">HOME</a></li>
+                <li><a href="/about-us">ABOUT US</a></li>
+                <li><a href="/patent-publications">PATENT PUBLICATIONS</a></li>
+                <li><a href="/product">PRODUCTS</a></li>
+                <li><a href="/career">CAREERS</a></li>
+                <li><a href="/contact-us">CONTACT US</a></li>
+                <li><a href="/for-investors">FOR INVESTORS</a></li>
+                <li><a href="/blog">BLOG</a></li>
+                <li onclick="closeNavigation()" class="cross"><a href="#"></a>&#10799;</a></li>
+            </ul>
+        </div>
+    </section>
+
+    {% block body %}
+
+    {% endblock %}
+
+    <!-- Footer section -->
+    <footer class="footer">
+        <div class="footer-cont">
+            <div class="row">
+                <div class="col-8">
+                    <div class="icons">
+                        <a href="#" class="fa fa-facebook"></a>
+                        <a href="#" class="fa fa-instagram"></a>
+                        <a href="#" class="fa fa-twitter"></a>
+                        <a href="#" class="fa fa-linkedin"></a>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search here...&#128269;">
+                        <button class="btn btn-crimson  search-butoon">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-10 footer-text">
+                <a href="#">Systems Engineering Pvt. Ltd.</a> | <span class="fa fa-copyright"></span><span
+                    id="date-year" class="date-year"></span> All rights
+                reserved</span>
+            </div>
+        </div>
+        </div>
+    </footer>
+    <script src="{{ url_for('static',filename='js/script.js') }}"></script>
+</body>
+
+</html>

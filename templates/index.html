@@ -1,0 +1,84 @@
+ {% extends "layout.html" %}
+ {% block body %}
+ <div class="carousel-container">
+     <div class="carousel-slide">
+         <img id="lastclone" src="{{ url_for('static',filename='img/23.gif') }}" alt="sliderImage">
+         <img src="{{ url_for('static',filename='img/01.gif') }}" alt="sliderImage">
+         <img src="{{ url_for('static',filename='img/02.gif') }}" alt="sliderImage">
+         <img src="{{ url_for('static',filename='img/03.gif') }}" alt="sliderImage">
+         <img src="{{ url_for('static',filename='img/04.gif') }}" alt="sliderImage">
+         <img src="{{ url_for('static',filename='img/05.gif') }}" alt="sliderImage">
+         <img src="{{ url_for('static',filename='img/06.gif') }}" alt="sliderImage">
+         <img src="{{ url_for('static',filename='img/07.gif') }}" alt="sliderImage">
+         <img src="{{ url_for('static',filename='img/08.gif') }}" alt="sliderImage">
+         <img src="{{ url_for('static',filename='img/09.gif') }}" alt="sliderImage">
+         <img src="{{ url_for('static',filename='img/10.gif') }}" alt="sliderImage">
+         <img src="{{ url_for('static',filename='img/11.gif') }}" alt="sliderImage">
+         <img src="{{ url_for('static',filename='img/12.gif') }}" alt="sliderImage">
+         <img src="{{ url_for('static',filename='img/13.gif') }}" alt="sliderImage">
+         <img src="{{ url_for('static',filename='img/14.gif') }}" alt="sliderImage">
+         <img src="{{ url_for('static',filename='img/15.gif') }}" alt="sliderImage">
+         <img src="{{ url_for('static',filename='img/16.gif') }}" alt="sliderImage">
+         <img src="{{ url_for('static',filename='img/17.gif') }}" alt="sliderImage">
+         <img src="{{ url_for('static',filename='img/18.gif') }}" alt="sliderImage">
+         <img src="{{ url_for('static',filename='img/19.gif') }}" alt="sliderImage">
+         <img src="{{ url_for('static',filename='img/20.gif') }}" alt="sliderImage">
+         <img src="{{ url_for('static',filename='img/23.gif') }}" alt="sliderImage">
+         <img id="firstclone" src="{{ url_for('static',filename='img/01.gif') }}" alt="sliderImage">
+     </div>
+ </div>
+ <div class="button-img">
+     <i id="prevBtn">&#8249;</i>
+     <i id="nextBtn">&#8250;</i>
+ </div>
+ <section class="next-part--1">
+     <div class="container">
+         <div class="row">
+             <div class="col-10 resp">
+                 <div class="content no-margin-top">
+                     <h1 class="content__heading">{{params["home_heading"]}}<br>{{params["home_subheading"]}}</h1>
+                     <br><br>
+                     <p class="content__para--1">
+                         <span class="font-largest">
+                             We are meant to serve through our innovations in surveillance and computer Visions at a
+                             pace
+                             faster
+                             than available.
+                             Visualization based systems, laser based systems, lighting solutions, precision
+                             electro-opto-mechanical mountings, optics based systems are our area of focus.<br><br>
+                         </span>
+                         <span class="font-larger">
+                             Our R & D is continuously working on putting into the next generation HS surveillance
+                             cameras,
+                             VHS
+                             Metro station cameras, computer vision microscopy cameras, CV microscopes, OIV camera, PIV
+                             cameras,
+                             Film and sports industry cameras, LD/PD, LIF instruments, data acquisition and processing
+                             modules
+                             based on frequency slicing techniques, optical ultra-high frequency vibrometer, beam scan
+                             instrument, R.I. measuring apparatus, LD drivers, high frequency stroboscopes, strobe
+                             drivers,
+                             LED
+                             drivers, goniometers, precision traverses, mounts.<br><br>
+                         </span>
+                         <span class="font-large">
+                             The supporting software; Beam scanner software, LD/PD software, PIV/OIV software,
+                             surveillance
+                             software, CVMC software under development besides the android applications.
+                         </span>
+                     </p>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </section>
+
+ <div
+     style="border-top: 1px solid yellow; bottom:0; display: flex; overflow: hidden; justify-content: center; flex-wrap: wrap; align-content: center;">
+     <div style="opacity: 0.3; z-index: -99;;">
+         <img style="margin-bottom: 10rem; width: 80vw; background-size:cover"
+             src="https://media.giphy.com/media/C4q4k0jLVg9sA/giphy.gif" alt="gif">
+     </div>
+ </div>
+ <script src="{{ url_for('static', filename='js/imageslider.js') }}"></script>
+ {% endblock %}

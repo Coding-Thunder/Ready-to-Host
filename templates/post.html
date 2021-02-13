@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<section class="next-part--1">
+    <div class="container" id="background-image">
+        <div class="content">
+            <h1 class="content__heading post_heading">{{post.title}}<br><br>{{post.subtitle}}</h1><br><br>
+        </div>
+    </div>
+    <div class="post-container">
+        <p class="post-content">
+            {{post.content}}
+        </p>
+        <span class="postedby">
+            Posted by {{post.postedby}} on {{post.DATE}}
+        </span>
+    </div>
+</section>
+
+{% endblock %}

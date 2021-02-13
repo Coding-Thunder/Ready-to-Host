@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+{% block body %}
+<section class="next-part--1">
+    <div class="container">
+        <div class="content">
+            <h1 class="content__heading">{{params["blog_heading"]}}</h1><br><br>
+            <p class="content__para--1">
+                Please Verify yourself first<br>
+                Acoording to the rules <br>
+                In order to be redirected to the blog <br><br>
+                Verify yourself first
+            </p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="form-content">
+                    <form action="#" class="contact-form" id="contact-form">
+                        <div id="form-control" class="form-control">
+                            <label for="name">Name</label>
+                            <input name="name" id="username" type="text" placeholder="Name">
+                            <i class="fa fa-check-circle"></i>
+                            <i class="fa fa-exclamation-circle"></i>
+                            <small>Error Message</small>
+                        </div>
+                        <div id="form-control" class="form-control">
+                            <label for="email">Email</label>
+                            <input name="email" id="email" type="email" placeholder="abcd@gmail.com">
+                            <i class="fa fa-check-circle"></i>
+                            <i class="fa fa-exclamation-circle"></i>
+                            <small>Error Message</small>
+                        </div>
+                        <div id="form-control" class="form-control">
+                            <label for="phone">Phone</label>
+                            <input name="phone" id="phone" type="number" placeholder="+91-(12345)-(67890)">
+                            <i class="fa fa-check-circle"></i>
+                            <i class="fa fa-exclamation-circle"></i>
+                            <small>Error Message</small>
+                        </div>
+                        <div id="form-control" class="form-control">
+                            <label for="message">Message</label>
+                            <input name="message" id="message" type="text" placeholder="message">
+                            <i class="fa fa-check-circle"></i>
+                            <i class="fa fa-exclamation-circle"></i>
+                            <small>Error Message</small>
+                        </div>
+                        <button class="btn btn-crimson btn-form" type="submit">Ask for approval</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-blog">
+    <!--To be shown with the help of for loop  -->
+    {% for post in posts %}
+    <div class="blog clearfix">
+        <div class="blog-post">
+            <div class="post-preview">
+                <a href="/post/{{post.slug}}">
+                    <h2 class="post-title">
+                        {{post.title}}
+                    </h2>
+                    <h3 class="post-subtitle">
+                        {{post.subtitle}}
+                    </h3>
+                </a>
+                <p class="post-para">
+                    {{post.content[:50]}}...
+                </p>
+                <p class="post-meta">Posted by
+                    <a href="#">{{post.postedby}}</a>
+                    on {{post.date}}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    <!-- for loop se dikhana h isse -->
+    <div class="btn-blog">
+        <a href="{{prev}}"><button class="btn btn-crimson btn-right">Previous</button></a>
+        <a href="{{next}}"> <button class="btn btn-crimson btn-right">Next </button></a>
+    </div>
+</section>
+
+{% endblock %}

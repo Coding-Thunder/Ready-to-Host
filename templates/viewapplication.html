@@ -1,0 +1,127 @@
+{% extends "layout.html" %}
+{% block body %}
+<section class="next-part--1">
+    <div class="container">
+        <div class="content">
+            <h1 class="content__heading">{{params["viewapplication_heading"]}}</h1><br><br>
+        </div>
+    </div>
+</section>
+<section id="section-viewapplication">
+    {% for application in applications %}
+    <h1 class="application-no">{{application.sno}}</h1>
+    <div class="container section-viewapplication">
+        <div class="row">
+            <div class="col-4 section-viewapplication-head resp">
+                <h1>DATE : <span>{{application.date}}</span></h1>
+            </div>
+            <div class="col-4 section-viewapplication-head resp">
+                <h1>JOB CODE : <span>{{application.JOBCODE}}</span></h1>
+            </div>
+            <div class="col-4 section-viewapplication-head resp">
+                <h1>DATE OF BIRTH : <span>{{application.DOB}}</span></h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4 section-viewapplication-head resp">
+                <h1>NAME : <span>{{application.SALUTATION}} {{application.F_NAME}} {{application.L_NAME}}</span></h1>
+            </div>
+            <div class="col-4 section-viewapplication-head resp">
+                <h1>CONTACT NUMBER : <span>{{application.CONTACT}}</span></h1>
+            </div>
+            <div class="col-4 section-viewapplication-head resp">
+                <h1>EMAIL : <span>{{application.EMAIL}}</span></h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-3 section-viewapplication-head resp">
+                <h1>CURRENT STATUS : <span>{{application.CURRENT_STATUS}}</span></h1>
+            </div>
+            <div class="col-3 section-viewapplication-head resp">
+                <h1>EXPERIENCE : <span>{{application.EXP}}</span></h1>
+            </div>
+            <div class="col-3 section-viewapplication-head resp">
+                <h1>COLLEGE : <span>{{application.COLLEGE}}</span></h1>
+            </div>
+            <div class="col-3 section-viewapplication-head resp">
+                <h1>DEGREE : <span>{{application.DEGREE}}</span></h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4 section-viewapplication-head resp">
+                <h1>REFERENCE : <span>{{application.REFRENCE}}</span></h1>
+            </div>
+            <div class="col-4 section-viewapplication-head resp">
+                <h1>POSSIBLE JOINING DATE : <span>{{application.POSSIBLE_DATE}}</span></h1>
+            </div>
+            <div class="col-4 section-viewapplication-head resp">
+                <h1>LAST CTC : <span>{{application.LAST_CTC}}</span></h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 section-viewapplication-head resp">
+                <h1>EXPECTED CTC : <span>{{application.EXPECTED_CTC}}</span></h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 section-viewapplication-head resp">
+                <h1>QUESTION 1 : <span>{{application.QUES1}}</span></h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 section-viewapplication-head resp">
+                <h1>QUESTION 2 : <span>{{application.QUES2}}</span></h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 section-viewapplication-head resp">
+                <h1>QUESTION 3 : <span>{{application.QUES3}}</span></h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4 section-viewapplication-head resp">
+                <h1>CV : <span>{{application.CV}}</span></h1>
+            </div>
+            <div class="col-4 section-viewapplication-head resp">
+                <h1>PORTFOLIO : <span>{{application.PORTFOLIO}}</span></h1>
+            </div>
+            <div class="col-4 section-viewapplication-head resp">
+                <h1>WORK SAMPLES : <span>{{application.WORKSAMPLE}}</span></h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6 section-viewapplication-head resp">
+                <h1>PHOTO FILE</h1>
+            </div>
+            {% set fname = 'Jobapplication-files/' + application.PHOTO %}
+            <div class="col-6 section-viewapplication-head applicant-img  resp">
+                <img src="{{ url_for('static', filename=fname) }}" alt="">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4 section-viewapplication-head  resp">
+                <h1>SIGN : <span>{{application.SIGN}}</span></h1>
+            </div>
+            <div class="col-4 section-viewapplication-head  resp">
+                <h1>AADHAAR CARD : <span>{{application.AADHAR_CARD}}</span></h1>
+            </div>
+            <div class="col-4 section-viewapplication-head  resp">
+                <h1>PAN CARD : <span>{{application.PAN_CARD}}</span></h1>
+            </div>
+        </div>
+    </div>
+    {% endfor %} <br><br>
+    <a id="a-button" href="/dashboard" class="btn btn-crimson btn-form">Back to dashboard</a>
+</section>
+
+{% endblock %}

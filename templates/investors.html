@@ -1,0 +1,167 @@
+{% extends "layout.html" %}
+{% block body %}
+<section class="next-part--1  u__margin--bottom">
+    <div class="container">
+        <div class="content">
+            <h1 class="content__heading">{{params["investors_heading1"]}}<br>{{params["investors_heading2"]}}</h1>
+            <br><br>
+        </div>
+    </div>
+</section>
+
+<section class="section-form">
+    <div class="container">
+        <div class="row">
+            <div class="cont1">
+                <div id="submission-form investor" class="investors">
+                    <form class="investors-form clearfix" action="/for-investors" method="POST"
+                        enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="col-4 resp">
+                                <div class="form">
+                                    <div class="field">
+                                        <label for="date">Date</label>
+                                        <input name="date" type="date" placeholder="Date">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4 resp">
+                                <div class="form">
+                                    <div class="field">
+                                        <label for="dob">Day</label>
+                                        <input name="day" type="Day Today">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4 resp">
+                                <div class="form">
+                                    <div class="field">
+                                        <label for="nameofcompany">Name of Company</label>
+                                        <input name="nameofcompany" type="text" placeholder="Company Name">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4 resp">
+                                <div class="form">
+                                    <div class="field">
+                                        <label for="location">Company Location</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4 name resp">
+                                <div class="form">
+                                    <div class="field">
+                                        <input name="location" type="text" placeholder="location">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 resp">
+                                <div class="form">
+                                    <div class="field">
+                                        <label for="reg_num">Company reg. no.</label>
+                                        <input name="reg_num" type="number" placeholder="Registration no.">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 resp">
+                                <div class="form">
+                                    <div class="field">
+                                        <label for="owner">Owner</label>
+                                        <input name="owner" type="owner" placeholder="Owner of company">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 resp">
+                                <div class="form">
+                                    <div class="field">
+                                        <label for="website">Website of company</label>
+                                        <input name="website" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 resp">
+                                <div class="form">
+                                    <div class="field">
+                                        <label for="invest">Products / intrested<br>in for the investment</label>
+                                        <input name="invest" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 resp">
+                                <div class="form">
+                                    <div class="field">
+                                        <label for="funding">Approx. target amount of funding</label>
+                                        <input name="funding" type="text" placeholder="Funding amount">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 resp">
+                                <div class="form">
+                                    <div class="field">
+                                        <label for="customintrest">Other custom<br>intrest if any:</label><br><br>
+                                        <textarea name="customintrest" cols="30" rows="10"
+                                            placeholder="Any query"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 resp">
+                                <div class="form">
+                                    <div class="field">
+                                        <label for="photo">Applicants's photo</label>
+                                        <input class="file-uploads" type="file" name="photo">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 resp">
+                                <div class="form">
+                                    <div class="field">
+                                        <label for="sign">Applicant's Signature</label><br>
+                                        <input class="file-uploads" type="file" name="sign">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3 resp">
+                                <div class="form">
+                                    <div class="field">
+                                        <label for="adhar">Upload Adhar Card</label><br>
+                                        <input class="file-uploads" type="file" name="adhar">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 resp">
+                                <div class="form">
+                                    <div class="field">
+                                        <label for="pancard">Upload PAN Card</label><br>
+                                        <input class="file-uploads" type="file" name="pancard">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 resp">
+                                <div class="form">
+                                    <div class="field">
+                                        <label for="Iid">International ID</label><br>
+                                        <input class="file-uploads" type="file" name="Iid">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br><br><br><br>
+                        <button type="submit" class="btn btn-crimson">Submit</button>
+                    </form>
+                </div>
+</section>
+{% endblock %}

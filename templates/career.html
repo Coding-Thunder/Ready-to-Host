@@ -1,0 +1,330 @@
+{% extends "layout.html" %}
+{% block body %}
+<section class="next-part--1">
+    <div class="container">
+        <div class="content">
+            <h1 class="content__heading">{{params["career_heading1"]}}<br>{{params["career_heading2"]}}</h1><br><br>
+            <div class="row">
+                <div class="col-3 resp">
+                    <div class="career-content">
+                        <ul class="search-jobs">
+                            <div class="city">
+                                <label for="select_city">Select City</label>
+                                <li><input name="select_city" type="radio"> Delhi</li>
+                                <li><input name="select_city" type="radio"> Mumbai</li>
+                                <li><input name="select_city" type="radio"> Pune</li>
+                            </div>
+                            <div class="keyword">
+                                <label for="enter_keyword">Enter keyword</label><br>
+                                <input name="enter_keyword" type="text" placeholder="Enter keywords">
+                            </div>
+                            <div class="job-type">
+                                <label for="jobtype">Job type</label>
+                                <li><input name="jobtype" type="radio"> Professional</li>
+                                <li><input name="jobtype" type="radio"> Career starter</li>
+                                <li><input name="jobtype" type="radio"> Fresher</li>
+                                <li><input name="jobtype" type="radio"> Intern</li>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-8 resp">
+                    <div class="joblist">
+                        <h1>Jobs as per your search <button class="btn-career btn btn-crimson">Search job</button>
+                        </h1>
+                        <div class="job-listing">
+                            {% for job in jobs %}
+                            <div class="job">
+                                <h2 class="job_code">{{ job.jobcode }}</h2>
+                                <h3 class="job_title">
+                                    {{ job.jobdescription }}
+                                </h3>
+                                <a href="#submission-form" onclick="jobApplicationForm()" class="btn btn-crimson">Apply
+                                    now</a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="section-form">
+    <div class="container cont1">
+        <div id="submission-form" class="jobapplication">
+            <form action="/career" method="POST" enctype="multipart/form-data">
+                <div class="row">
+                    <div class="col-4 resp">
+                        <div class="form">
+                            <div class="field">
+                                <label for="jobcode">Job code</label>
+                                <input name="jobcode" type="text" placeholder="Job Code">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 resp">
+                        <div class="form">
+                            <div class="field">
+                                <label for="dob">Date of birth</label>
+                                <input name="dob" type="date">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 resp">
+                        <div class="form">
+                            <div class="field">
+                                <label for="salutation">Salutation</label>
+                                <input name="salutation" type="text" placeholder="Mr, Mrs Miss">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4 resp">
+                        <div class="form">
+                            <div class="field">
+                                <label for="name">Name in block letters</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 name resp">
+                        <div class="form">
+                            <div class="field">
+                                <input name="first-name" type="text" placeholder="First name">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 name resp">
+                        <div class="form">
+                            <div class="field">
+                                <input name="last-name" type="text" placeholder="Last name">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 resp">
+                        <div class="form">
+                            <div class="field">
+                                <label for="contact">Contact no.</label>
+                                <input name="contact" type="number" placeholder="Phone number">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 resp">
+                        <div class="form">
+                            <div class="field">
+                                <label for="email">Email</label>
+                                <input name="email" type="email" placeholder="Email id">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 resp">
+                        <div class="form">
+                            <div class="field">
+                                <label for="current_status">Current status</label>
+                                <input name="current_status" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 resp">
+                        <div class="form">
+                            <div class="field">
+                                <label for="exp">Experience</label>
+                                <input name="exp" type="text">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4 resp">
+                        <div class="form">
+                            <div class="field">
+                                <label for="education">Highest Qualification</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 resp">
+                        <div class="form">
+                            <div class="field">
+                                <label for="degree">Degree</label>
+                                <input name="degree" type="text" placeholder="Degree name">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 resp">
+                        <div class="form">
+                            <div class="field">
+                                <label for="college">College</label>
+                                <input name="college" type="College" placeholder="College name">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3 resp">
+                        <div class="form">
+                            <div class="field">
+                                <label for="refrence">How did you get the reference ?</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 resp">
+                        <div class="form">
+                            <div class="field">
+                                <input name="refrence" type="text" placeholder="Reference">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 resp">
+                        <div class="form">
+                            <div class="field">
+                                <label for="possibledate">Earliest possible joining date</label>
+                                <input name="possibledate" type="text">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4 resp">
+                        <div class="form">
+                            <div class="field">
+                                <label for="lastctc">Last CTC</label>
+                                <input name="lastctc" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 resp">
+                        <div class="form">
+                            <div class="field">
+                                <label for="expected_ctc">Expected CTC</label>
+                                <input name="expected_ctc" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 resp">
+                        <div class="form">
+                            <div class="field">
+                                <label for="current_ctc">Current CTC</label>
+                                <input name="current_ctc" type="text">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4 resp">
+                        <div class="form">
+                            <div class="field">
+                                <label for="ques1">Why do you want to join us ?</label><br><br>
+                                <textarea name="ques1" cols="30" rows="10" placeholder="Enter answer here"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 resp">
+                        <div class="form">
+                            <div class="field">
+                                <label for="ques2">What are the expectations<br> from the employer?</label><br><br>
+                                <textarea name="ques2" cols="30" rows="10" placeholder="Enter answer here"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 resp">
+                        <div class="form">
+                            <div class="field">
+                                <label for="ques3">Do you have previous sample of related work?<br> Provide if
+                                    yes</label><br><br>
+                                <textarea name="ques3" cols="30" rows="10" placeholder="Enter answer here"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 resp">
+                        <div class="form">
+                            <div class="field">
+                                <label for="cv">Upload CV</label>
+                                <input class="file-uploads" type="file" name="cv">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 resp">
+                        <div class="form">
+                            <div class="field">
+                                <label for="website_of_work">Website of work</label>
+                                <input type="text" name="website_of_work">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 resp">
+                        <div class="form">
+                            <div class="field">
+                                <label for="portfolio">Portfolio</label>
+                                <input type="text" name="portfolio">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 resp">
+                        <div class="form">
+                            <div class="field">
+                                <label for="worksample">Work samples</label>
+                                <input type="text" name="worksample">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 resp">
+                        <div class="form">
+                            <div class="field">
+                                <div class="g-recaptcha" data-sitekey="your_site_key"></div>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3 resp">
+                        <div class="form">
+                            <div class="field">
+                                <label for="sign">Upload Signature</label><br>
+                                <input class="file-uploads" type="file" name="sign">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 resp">
+                        <div class="form">
+                            <div class="field">
+                                <label for="photo">Upload Photo</label><br>
+                                <input class="file-uploads" type="file" name="photo">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 resp">
+                        <div class="form">
+                            <div class="field">
+                                <label for="adhar">Upload Adhar Card</label><br>
+                                <input class="file-uploads" type="file" name="adhar">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 resp">
+                        <div class="form">
+                            <div class="field">
+                                <label for="pancard">Upload PAN Card</label><br>
+                                <input class="file-uploads" type="file" name="pancard">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br><br><br><br>
+                <button type="submit" class="btn btn-crimson">Submit</button>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

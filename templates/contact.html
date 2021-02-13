@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<!-- Contact Form Along With Validation -->
+<section class="next-part--1">
+    <div class="container">
+        <div class="content">
+            <h1 class="content__heading">{{params["contact_heading"]}}</h1><br><br>
+            <p class="content__para--1">
+                Having a problem...? or,<br>
+                Got a solution to the existing one...?<br>
+                Whatever we'll be happy to connect to you..?<br><br>
+                Please fill this form below in order to reach out to us all fields are necesory.
+            </p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-6 resp">
+                <div class="form-content">
+                    <form action="/contact-us" method="POST" class="contact-form" id="contact-form">
+                        <div id="form-control" class="form-control">
+                            <label for="name">Name</label>
+                            <input name="name" id="username" type="text" placeholder="Name">
+                            <i class="fa fa-check-circle"></i>
+                            <i class="fa fa-exclamation-circle"></i>
+                            <small>Error Message</small>
+                        </div>
+                        <div id="form-control" class="form-control">
+                            <label for="email">Email</label>
+                            <input name="email" id="email" type="email" placeholder="abcd@gmail.com">
+                            <i class="fa fa-check-circle"></i>
+                            <i class="fa fa-exclamation-circle"></i>
+                            <small>Error Message</small>
+                        </div>
+                        <div id="form-control" class="form-control">
+                            <label for="phone">Phone</label>
+                            <input name="phone" id="phone" type="number" placeholder="+91-(12345)-(67890)">
+                            <i class="fa fa-check-circle"></i>
+                            <i class="fa fa-exclamation-circle"></i>
+                            <small>Error Message</small>
+                        </div>
+                        <div id="form-control" class="form-control">
+                            <label for="message">Message</label>
+                            <input name="message" id="message" type="text" placeholder="message">
+                            <i class="fa fa-check-circle"></i>
+                            <i class="fa fa-exclamation-circle"></i>
+                            <small>Error Message</small>
+                        </div>
+                        <button class="btn btn-crimson btn-form" type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-6 resp">
+                <div class="contact-content">
+                    <div class="text">Get in touch</div>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam laborum distinctio
+                        facilis voluptatem commodi molestias obcaecati nisi exercitationem veniam repudiandae?
+                    </p>
+                    <div class="icons">
+                        <div class="pt1 pt-right">
+                            <i class="fa fa-phone"></i>
+                            <div class="info">
+                                <div class="head">Contact number</div>
+                                <div class="sub-title">9665789732</div>
+                            </div>
+                        </div>
+
+                        <div class="pt1 pt-right-lil">
+                            <i class="fa fa-map-marker"></i>
+                            <div class="info">
+                                <div class="head">Address</div>
+                                <div class="sub-title">Gopalwadi Road 194. Samata Nagar, Daund<br>Pune, Maharashtra,
+                                    413801 India</div>
+
+                            </div>
+                        </div>
+
+                        <div class="pt1 pt-right">
+                            <i class="fa fa-envelope"></i>
+                            <div class="info">
+                                <div class="head">Email</div>
+                                <div class="sub-title">se-pune@datamail.in</div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</section>
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+{% block body %}
+<section class="next-part--1">
+    <div class="container">
+        <div class="content">
+            <h1 class="content__heading">{{params["product_heading"]}}</h1><br><br>
+            <p class="content__para--1">
+                Having a problem...? or,<br>
+                Got a solution to the existing one...?<br>
+                Whatever we'll be happy to connect to you..?<br><br>
+                Please fill this form below in order to reach out to us all fields are necesory.
+            </p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="form-content">
+                    <form action="#" class="contact-form" id="contact-form">
+                        <div id="form-control" class="form-control">
+                            <label for="name">Name</label>
+                            <input name="name" id="username" type="text" placeholder="Name">
+                            <i class="fa fa-check-circle"></i>
+                            <i class="fa fa-exclamation-circle"></i>
+                            <small>Error Message</small>
+                        </div>
+                        <div id="form-control" class="form-control">
+                            <label for="email">Email</label>
+                            <input name="email" id="email" type="email" placeholder="abcd@gmail.com">
+                            <i class="fa fa-check-circle"></i>
+                            <i class="fa fa-exclamation-circle"></i>
+                            <small>Error Message</small>
+                        </div>
+                        <div id="form-control" class="form-control">
+                            <label for="phone">Phone</label>
+                            <input name="phone" id="phone" type="number" placeholder="+91-(12345)-(67890)">
+                            <i class="fa fa-check-circle"></i>
+                            <i class="fa fa-exclamation-circle"></i>
+                            <small>Error Message</small>
+                        </div>
+                        <div id="form-control" class="form-control">
+                            <label for="message">Message</label>
+                            <input name="message" id="message" type="text" placeholder="message">
+                            <i class="fa fa-check-circle"></i>
+                            <i class="fa fa-exclamation-circle"></i>
+                            <small>Error Message</small>
+                        </div>
+                        <button class="btn btn-crimson btn-form" type="submit">Ask a product</button><br><br>
+                        <a id="a-button" href="/dashboard" class="btn btn-crimson btn-form">Back to dashboard</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-blog">
+    <!--To be shown with the help of for loop  -->
+    <div class="blog clearfix">
+        <div class="blog-post">
+            <div class="post-preview">
+                <a href="/post">
+                    <h2 class="post-title">
+
+                    </h2>
+                    <h3 class="post-subtitle">
+                        This is a Subtitle for the above post
+                    </h3>
+                </a>
+                <p class="post-para">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo ut, totam
+                    numquam iste a in
+                    veniam distinctio consectetur optio eaque?</p>
+                <p class="post-meta">Posted by
+                    <a href="#">Someone</a>
+                    on 16 jan, 2021</p>
+            </div>
+        </div>
+    </div>
+    <!-- for loop se dikhana h isse -->
+</section>
+
+{% endblock %}
